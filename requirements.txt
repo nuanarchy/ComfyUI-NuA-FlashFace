@@ -1,0 +1,7 @@
+numpy
+safetensors
+torch
+torchvision
+transformers
+easydict
+ftfy
