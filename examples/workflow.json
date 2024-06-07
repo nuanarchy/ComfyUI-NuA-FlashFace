@@ -1,0 +1,483 @@
+{
+  "last_node_id": 175,
+  "last_link_id": 266,
+  "nodes": [
+    {
+      "id": 168,
+      "type": "FlashFace_Loader_NuA",
+      "pos": [
+        90,
+        50
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FLASHFACE_MODELS",
+          "type": "FLASHFACE_MODELS",
+          "links": [
+            258
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FlashFace_Loader_NuA"
+      },
+      "widgets_values": [
+        "flashface.ckpt"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        90,
+        180
+      ],
+      "size": [
+        210,
+        310
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            167
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elon_1.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 162,
+      "type": "ImageBatch",
+      "pos": [
+        470,
+        270
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 266
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 262
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            249
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 163,
+      "type": "ImageBatch",
+      "pos": [
+        470,
+        370
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 249
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 263
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            260
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 104,
+      "type": "ImageBatch",
+      "pos": [
+        470,
+        180
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 167
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 261
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            266
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 170,
+      "type": "LoadImage",
+      "pos": [
+        0,
+        540
+      ],
+      "size": [
+        220,
+        220
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            261
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elon_2.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 171,
+      "type": "LoadImage",
+      "pos": [
+        260,
+        560
+      ],
+      "size": [
+        210,
+        310
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            262
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elon_3.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 172,
+      "type": "LoadImage",
+      "pos": [
+        500,
+        580
+      ],
+      "size": [
+        210,
+        310
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            263
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "elon_4.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "PreviewImage",
+      "pos": [
+        1210,
+        70
+      ],
+      "size": {
+        "0": 390,
+        "1": 440
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 259
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 169,
+      "type": "FlashFace_Sampler_NuA",
+      "pos": [
+        740,
+        60
+      ],
+      "size": [
+        400,
+        550
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "flashface_models",
+          "type": "FLASHFACE_MODELS",
+          "link": 258
+        },
+        {
+          "name": "reference_faces",
+          "type": "IMAGE",
+          "link": 260
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            259
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FlashFace_Sampler_NuA"
+      },
+      "widgets_values": [
+        "a man on Mars chills, happy, best quality, masterpiece, ultra-detailed, UHD 4K, photographic",
+        "blurry, ugly, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of frame, extra limbs, disfigured, deformed, body out of frame, bad anatomy, watermark, signature, cut off, low contrast, underexposed, overexposed, bad art, beginner, amateur, distorted face",
+        35,
+        768,
+        768,
+        0.4,
+        0.3,
+        0.6,
+        0.6,
+        1.2,
+        0.85,
+        3.2,
+        750,
+        7.5,
+        1560089848,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      167,
+      2,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      249,
+      162,
+      0,
+      163,
+      0,
+      "IMAGE"
+    ],
+    [
+      258,
+      168,
+      0,
+      169,
+      0,
+      "FLASHFACE_MODELS"
+    ],
+    [
+      259,
+      169,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      260,
+      163,
+      0,
+      169,
+      1,
+      "IMAGE"
+    ],
+    [
+      261,
+      170,
+      0,
+      104,
+      1,
+      "IMAGE"
+    ],
+    [
+      262,
+      171,
+      0,
+      162,
+      1,
+      "IMAGE"
+    ],
+    [
+      263,
+      172,
+      0,
+      163,
+      1,
+      "IMAGE"
+    ],
+    [
+      266,
+      104,
+      0,
+      162,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
