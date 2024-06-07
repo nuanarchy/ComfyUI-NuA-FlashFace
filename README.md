@@ -33,3 +33,23 @@ ComfyUI implementation of [FlashFace: Human Image Personalization with High-fide
     cd ComfyUI/custom_nodes/ComfyUI-NuA-FlashFace
     ./setup.sh
     ```
+## Examples
+In the `examples` folder, you will find the workflow diagram, the JSON file with the configuration, and four resulting images.
+
+### Workflow Diagram
+
+<img src="examples/workflow_example.png" alt="Workflow Diagram" width=auto height=auto>
+
+### Resulting Images
+<table>
+    <tr>
+        <td><img src="examples/ComfyUI_example_0.png" alt="Result Image 1" width=auto height=auto></td>
+        <td><img src="examples/ComfyUI_example_1.png" alt="Result Image 2" width=auto height=auto></td>
+    </tr>
+    <tr>
+        <td><img src="examples/ComfyUI_example_2.png" alt="Result Image 3" width=auto height=auto></td>
+        <td><img src="examples/ComfyUI_example_3.png" alt="Result Image 4" width=auto height=auto></td>
+    </tr>
+</table>
+
+
