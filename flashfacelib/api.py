@@ -152,19 +152,19 @@ class FlashFace():
             assert len(
                 reference_faces) > 0, 'No face detected in the reference images'
 
-            if len(reference_faces) < 4:
-                expand_reference_faces = copy.deepcopy(reference_faces)
-                while len(expand_reference_faces) < 4:
-                    # random select from ref_imgs
-                    expand_reference_faces.append(random.choice(reference_faces))
-                reference_faces = expand_reference_faces
+            #if len(reference_faces) < 4:
+            #    expand_reference_faces = copy.deepcopy(reference_faces)
+            #    while len(expand_reference_faces) < 4:
+            #        # random select from ref_imgs
+            #        expand_reference_faces.append(random.choice(reference_faces))
+            #    reference_faces = expand_reference_faces
 
         # process the ref_imgs
         H = height
         W = width
 
         normalized_bbox = face_bbox
-        print(normalized_bbox)
+        #print(normalized_bbox)
         face_bbox = [
             int(normalized_bbox[0] * W),
             int(normalized_bbox[1] * H),
@@ -209,7 +209,7 @@ class FlashFace():
             for u in faces.split(cfg.ae_batch_size)
         ])
         #  ref_z0 = ref_z0[None].repeat(num_sample, 1,1,1,1).flatten(0,1)
-        self.unet.share_cache['num_pairs'] = 4
+        self.unet.share_cache['num_pairs'] = len(faces)
         self.unet.share_cache['ref'] = ref_z0
         self.unet.share_cache['similarity'] = torch.tensor(lamda_feat).cuda()
         self.unet.share_cache['ori_similarity'] = torch.tensor(lamda_feat).cuda()
