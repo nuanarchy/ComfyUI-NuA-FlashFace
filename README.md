@@ -1,6 +1,12 @@
 # ComfyUI-NuA-FlashFace
 ComfyUI implementation of [FlashFace: Human Image Personalization with High-fidelity Identity Preservation](https://github.com/ali-vilab/FlashFace)
 
+## Features
+1. Zero-shot human image customization within seconds with one or several reference faces.
+2. Strong identity preservation ability, even for non-celebrities
+3. Strong language prompts following ability, even changing the age or gender of the person.
+4. Flexible strength adjustment for identity image control and language prompt control.
+
 ## Installation
 1. Clone the repository into the `ComfyUI/custom_nodes` directory
 
