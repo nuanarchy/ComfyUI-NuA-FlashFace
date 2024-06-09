@@ -27,11 +27,11 @@ ComfyUI implementation of [FlashFace: Human Image Personalization with High-fide
     wget -O ComfyUI/models/face_detection/retinaface_resnet50.pth https://huggingface.co/shilongz/FlashFace-SD1.5/resolve/main/retinaface_resnet50.pth?download=true
     ```
 
-4. Alternatively, you can use the `setup.sh` script to automate the setup process:
+4. Alternatively, you can use the `install.py` script to automate the setup process:
 
     ```sh
     cd ComfyUI/custom_nodes/ComfyUI-NuA-FlashFace
-    ./setup.sh
+    python install.py
     ```
 ## Examples
 In the `examples` folder, you will find the workflow diagram, the JSON file with the configuration, and four resulting images.
