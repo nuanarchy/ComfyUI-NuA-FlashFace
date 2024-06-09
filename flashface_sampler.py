@@ -1,4 +1,5 @@
 import torchvision.transforms.functional as F
+from comfy.utils import ProgressBar
 from .flashfacelib.api import FlashFace
 
 class FlashFaceSampler:
@@ -40,7 +41,18 @@ class FlashFaceSampler:
 
     def generate(self, flashface_models, reference_faces, positive, negative, steps, height, width, face_bbox_x1, face_bbox_y1, face_bbox_x2, face_bbox_y2, lamda_feat, lamda_feat_before_ref_guidence, face_guidence, step_to_launch_face_guidence, text_control_scale, seed):
         (unet, clip, clip_tokenizer, vae, retinaface_model) = flashface_models
-        flashface = FlashFace(unet, clip, clip_tokenizer, vae, retinaface_model)
+
+        pbar = ProgressBar(int(steps))
+        p = {"prev": 0}
+
+        def prog(i):
+            i = i + 1
+            if i < p["prev"]:
+                p["prev"] = 0
+            pbar.update(i - p["prev"])
+            p["prev"] = i
+
+        flashface = FlashFace(unet, clip, clip_tokenizer, vae, retinaface_model, on_progress=prog)
 
         need_face_detect = True
         img = flashface.generate(

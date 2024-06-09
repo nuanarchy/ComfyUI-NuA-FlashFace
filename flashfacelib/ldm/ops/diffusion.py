@@ -139,6 +139,7 @@ class GaussianDiffusion(object):
                discard_penultimate_step=None,
                return_intermediate=None,
                show_progress=False,
+               callback=None,
                seed=-1,
                **kwargs):
         # sanity check
@@ -230,6 +231,7 @@ class GaussianDiffusion(object):
                        model_fn,
                        sigmas,
                        show_progress=show_progress,
+                       callback=callback,
                        **kwargs)
         return (x0, intermediates) if return_intermediate is not None else x0
 

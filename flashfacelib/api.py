@@ -25,7 +25,7 @@ from ldm.models.retinaface import crop_face
 from utils import Compose, PadToSquare, get_padding, seed_everything
 
 class FlashFace():
-    def __init__(self, model, clip, clip_tokenizer, vae, retinaface):
+    def __init__(self, model, clip, clip_tokenizer, vae, retinaface, on_progress=None):
         self.device = 'cuda'
 
         self.padding_to_square = PadToSquare(224)
@@ -43,6 +43,12 @@ class FlashFace():
                                     beta_max=cfg.scale_max)
         self.diffusion = ContextGaussianDiffusion(sigmas=sigmas, prediction_type=cfg.prediction_type)
         self.diffusion.num_pairs = cfg.num_pairs
+
+        self.progress_hook = on_progress if on_progress else None
+
+    def progress_callback(self, i):
+        if self.progress_hook:
+            self.progress_hook(i)
 
     def detect_face(self, imgs=None):
 
@@ -229,6 +235,7 @@ class FlashFace():
                                   guide_scale=text_control_scale,
                                   guide_rescale=0.5,
                                   show_progress=True,
+                                  callback=self.progress_callback,
                                   discretization=cfg.discretization)
 
         imgs = self.autoencoder.decode(z0 / cfg.ae_scale)
