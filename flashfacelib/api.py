@@ -152,26 +152,18 @@ class FlashFace():
             assert len(
                 reference_faces) > 0, 'No face detected in the reference images'
 
-            #if len(reference_faces) < 4:
-            #    expand_reference_faces = copy.deepcopy(reference_faces)
-            #    while len(expand_reference_faces) < 4:
-            #        # random select from ref_imgs
-            #        expand_reference_faces.append(random.choice(reference_faces))
-            #    reference_faces = expand_reference_faces
-
         # process the ref_imgs
         H = height
         W = width
 
         normalized_bbox = face_bbox
-        #print(normalized_bbox)
         face_bbox = [
             int(normalized_bbox[0] * W),
             int(normalized_bbox[1] * H),
             int(normalized_bbox[2] * W),
             int(normalized_bbox[3] * H)
         ]
-        max_size = max(face_bbox[2] - face_bbox[1], face_bbox[3] - face_bbox[1])
+        max_size = max(face_bbox[2] - face_bbox[0], face_bbox[3] - face_bbox[1])
         empty_mask = torch.zeros((H, W))
 
         empty_mask[face_bbox[1]:face_bbox[1] + max_size,
