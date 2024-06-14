@@ -10,6 +10,6 @@ Repository = "https://github.com/nuanarchy/ComfyUI-NuA-FlashFace"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "nuanarchy"
 DisplayName = "ComfyUI-NuA-FlashFace"
 Icon = ""
