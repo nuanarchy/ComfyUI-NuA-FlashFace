@@ -3,10 +3,10 @@ import os
 import torch
 from .flashfacelib.api import FlashFace
 from models import sd_v1_ref_unet
-from config import cfg
-from ldm import data, models
-from ldm.models.vae import sd_v1_vae
-from ldm.models.retinaface import retinaface
+from .flashfacelib.flashface.config import cfg
+from .flashfacelib.ldm import data, models
+from .flashfacelib.ldm.models.vae import sd_v1_vae
+from .flashfacelib.ldm.models.retinaface import retinaface
 
 import folder_paths
 

@@ -15,14 +15,14 @@ import torch.nn as nn
 import torchvision.transforms as T
 import torchvision.transforms.functional as F
 
-from config import cfg
+from .flashface.config import cfg
 
-from ops.context_diffusion import ContextGaussianDiffusion
+from .flashface.ops.context_diffusion import ContextGaussianDiffusion
 
-from ldm import ops
-from ldm.models.retinaface import crop_face
+from .ldm import ops
+from .ldm.models.retinaface import crop_face
 
-from utils import Compose, PadToSquare, get_padding, seed_everything
+from .flashface.utils import Compose, PadToSquare, get_padding, seed_everything
 
 class FlashFace():
     def __init__(self, model, clip, clip_tokenizer, vae, retinaface, on_progress=None):
@@ -51,7 +51,6 @@ class FlashFace():
             self.progress_hook(i)
 
     def detect_face(self, imgs=None):
-
         # read images
         pil_imgs = imgs
         b = len(pil_imgs)
@@ -113,7 +112,6 @@ class FlashFace():
         return x
 
     def generate(self,
-
                  pos_prompt,
                  neg_prompt="",
                  steps=35,
@@ -173,7 +171,6 @@ class FlashFace():
         empty_mask = empty_mask[None].repeat(num_sample, 1, 1)
 
         pasted_ref_faces = []
-        show_refs = []
         for ref_img in reference_faces:
             ref_img = ref_img.convert('RGB')
             ref_img = self.padding_to_square(ref_img)
@@ -238,7 +235,7 @@ class FlashFace():
 
         # convert to PIL image
         imgs = [Image.fromarray(img) for img in imgs]
-        imgs = imgs + show_refs
+        imgs = imgs
 
         torch_imgs = []
         for img in imgs:
