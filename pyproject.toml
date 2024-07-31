@@ -2,7 +2,7 @@
 name = "comfyui-nua-flashface"
 description = "ComfyUI implementation of [a/FlashFace: Human Image Personalization with High-fidelity Identity Preservation](https://github.com/ali-vilab/FlashFace)\nNOTE: You need to downalod models manually."
 version = "1.0.0"
-license = "LICENSE"
+license = { file = "LICENSE" }
 dependencies = ["numpy", "safetensors", "torch", "torchvision", "transformers", "easydict", "ftfy"]
 
 [project.urls]
